@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sumesh — Finance & Nonprofit Systems</title>
+<meta name="description" content="Portfolio of Sumesh, finance professional working across international education and nonprofit organizations, based in Kathmandu, Nepal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #EFE6D8;
+    --card: #FBF7EF;
+    --ink: #2E2620;
+    --ink-soft: #5A4F42;
+    --gold: #B8791F;
+    --sage: #6B7A5E;
+    --line: #D9CCB4;
+    --max: 760px;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: var(--gold); text-decoration: none; }
+  a:hover{ text-decoration: underline; }
+  a:focus-visible, button:focus-visible{ outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  .wrap{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- Mountain signature motif ---------- */
+  .ridge{
+    width: 100%;
+    height: 64px;
+    display: block;
+  }
+  .ridge path{ fill: none; stroke: var(--sage); stroke-width: 1.4; opacity: 0.55; }
+
+  /* ---------- Hero ---------- */
+  header.hero{
+    padding: 96px 0 48px;
+    position: relative;
+  }
+  .eyebrow{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 600;
+    margin: 0 0 18px;
+  }
+  h1.name{
+    font-family: 'Fraunces', serif;
+    font-optical-sizing: auto;
+    font-size: clamp(42px, 8vw, 68px);
+    font-weight: 500;
+    line-height: 1.05;
+    margin: 0 0 20px;
+    color: var(--ink);
+  }
+  h1.name em{
+    font-style: italic;
+    font-weight: 400;
+    color: var(--gold);
+  }
+  p.tagline{
+    font-size: 19px;
+    color: var(--ink-soft);
+    max-width: 46ch;
+    margin: 0 0 32px;
+  }
+  .hero-links{
+    display:flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .hero-links a{
+    color: var(--ink);
+    border-bottom: 1.5px solid var(--gold);
+    padding-bottom: 2px;
+  }
+
+  /* ---------- Sections ---------- */
+  section{ padding: 56px 0; }
+  section + section{ border-top: 1px solid var(--line); }
+
+  h2.section-title{
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0 0 28px;
+    color: var(--ink);
+  }
+
+  .about-body p{
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 62ch;
+    margin: 0 0 16px;
+  }
+
+  /* ---------- Experience timeline ---------- */
+  .timeline{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .role{
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 24px;
+    padding: 26px 0;
+    border-top: 1px solid var(--line);
+  }
+  .role:first-child{ border-top: none; padding-top: 0; }
+  .role-period{
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--sage);
+    font-weight: 600;
+    padding-top: 3px;
+  }
+  .role-title{
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 4px;
+    color: var(--ink);
+  }
+  .role-org{
+    font-size: 14px;
+    color: var(--gold);
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+  .role-desc{
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 56ch;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact-card{
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 36px;
+  }
+  .contact-card p{
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin: 0 0 20px;
+    max-width: 50ch;
+  }
+  .contact-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contact-list a{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .contact-list span.label{
+    display:inline-block;
+    width: 90px;
+    color: var(--sage);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+
+  footer{
+    padding: 32px 0 64px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    opacity: 0.7;
+  }
+
+  /* ---------- Placeholder highlighting (remove after editing) ---------- */
+  .edit{
+    background: rgba(184,121,31,0.14);
+    border-bottom: 1px dashed var(--gold);
+  }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 560px){
+    header.hero{ padding: 64px 0 36px; }
+    .role{ grid-template-columns: 1fr; gap: 6px; }
+    .role-period{ padding-top: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">Finance &amp; Nonprofit Systems</p>
+    <h1 class="name">Sumesh <em class="edit">Khadgi </em></h1>
+    <p class="tagline">I build financial systems and controls for international nonprofits — grant accounting, multi-country consolidation, and the quiet infrastructure that lets mission-driven organizations run well.</p>
+    <div class="hero-links">
+      <a href="#experience">Experience</a>
+      <a href="#contact">Get in touch</a>
+      <a class="edit" href="#">[Link to LinkedIn]</a>
+    </div>
+  </header>
+</div>
+
+<svg class="ridge" viewBox="0 0 760 64" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0,50 L90,18 L150,40 L230,10 L310,44 L400,22 L480,48 L560,14 L650,38 L760,20" />
+</svg>
+
+<div class="wrap">
+  <section id="about">
+    <h2 class="section-title">About</h2>
+    <div class="about-body">
+      <p class="edit"> Based in Kathmandu, Nepal, I work in international NGO finance, with a focus on fund accounting, SORP compliance, and grant lifecycle management across multi-country education programmes. I'm currently leading a Microsoft Dynamics 365 Business Central implementation, moving a multi-entity organization off Xero onto a system built for consolidated reporting, restricted-fund tracking, and intercompany operations across program countries.</p>
+      <p>Outside my primary role, I serve as Treasurer for a youth-led nonprofit, where governance, audit readiness, and financial transparency matter just as much as the numbers themselves.</p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 class="section-title">Experience</h2>
+    <div class="timeline">
+      <div class="role">
+        <div class="role-period edit">August 2024–Present</div>
+        <div>
+          <p class="role-title">Senior Global Finance Officer</p>
+          <p class="role-org">United World Schools</p>
+          <p class="role-desc">Leading finance operations across program countries including Nepal, Madagascar, Myanmar, and Cambodia — spanning consolidation, forex, grant accounting, audit response, and an active ERP migration to Dynamics 365 Business Central.</p>
+        </div>
+      </div>
+      <div class="role">
+        <div class="role-period edit">September 2024–Present</div>
+        <div>
+          <p class="role-title">Treasurer</p>
+          <p class="role-org">YUWA</p>
+          <p class="role-desc">Overseeing financial governance and statutory audit processes for a youth-led nonprofit based in Nepal.</p>
+        </div>
+      </div>
+      <div class="role edit">
+        <div class="role-period">[Year]–[Year]</div>
+        <div>
+          <p class="role-title">[Add earlier role]</p>
+          <p class="role-org">[Organization]</p>
+          <p class="role-desc">[A sentence or two on what you did and what it led to.]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Get in touch</h2>
+    <div class="contact-card">
+      <p>Open to conversations on nonprofit finance systems, ERP implementations, and international NGO operations.</p>
+      <ul class="contact-list">
+        <li><span class="label">Email</span> <a class="edit" href="mailto:you@example.com">you@example.com</a></li>
+        <li><span class="label">LinkedIn</span> <a class="edit" href="#">linkedin.com/in/yourname</a></li>
+        <li><span class="label">Location</span> Kathmandu, Nepal</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    &copy; <span id="year"></span> Sumesh. Built and hosted with care.
+  </footer>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
