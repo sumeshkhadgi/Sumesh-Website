@@ -10,13 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg: #EFE6D8;
-    --card: #FBF7EF;
-    --ink: #2E2620;
-    --ink-soft: #5A4F42;
-    --gold: #B8791F;
-    --sage: #6B7A5E;
-    --line: #D9CCB4;
+    --bg: #172621;
+    --card: #1E332C;
+    --ink: #EFEAE0;
+    --ink-soft: #A9B8AE;
+    --gold: #C79A44;
+    --sage: #06402B;
+    --sage-text: #6FA688;
+    --line: #2A3E36;
     --max: 760px;
   }
 
@@ -44,13 +45,18 @@
     padding: 0 28px;
   }
 
-  /* ---------- Mountain signature motif ---------- */
-  .ridge{
-    width: 100%;
-    height: 64px;
-    display: block;
+  /* ---------- Divider accent ---------- */
+  .divider{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
   }
-  .ridge path{ fill: none; stroke: var(--sage); stroke-width: 1.4; opacity: 0.55; }
+  .divider-lines{
+    height: 12px;
+    border-top: 2px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    opacity: 0.6;
+  }
 
   /* ---------- Hero ---------- */
   header.hero{
@@ -62,7 +68,7 @@
     font-size: 13px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--sage);
+    color: var(--sage-text);
     font-weight: 600;
     margin: 0 0 18px;
   }
@@ -135,7 +141,7 @@
   .role-period{
     font-size: 13px;
     letter-spacing: 0.04em;
-    color: var(--sage);
+    color: var(--sage-text);
     font-weight: 600;
     padding-top: 3px;
   }
@@ -163,6 +169,7 @@
   .contact-card{
     background: var(--card);
     border: 1px solid var(--line);
+    border-top: 3px solid var(--sage);
     border-radius: 4px;
     padding: 36px;
   }
@@ -188,7 +195,7 @@
   .contact-list span.label{
     display:inline-block;
     width: 90px;
-    color: var(--sage);
+    color: var(--sage-text);
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -200,12 +207,6 @@
     font-size: 13px;
     color: var(--ink-soft);
     opacity: 0.7;
-  }
-
-  /* ---------- Placeholder highlighting (remove after editing) ---------- */
-  .edit{
-    background: rgba(184,121,31,0.14);
-    border-bottom: 1px dashed var(--gold);
   }
 
   /* ---------- Mobile ---------- */
@@ -225,25 +226,25 @@
 <div class="wrap">
   <header class="hero">
     <p class="eyebrow">Finance &amp; Nonprofit Systems</p>
-    <h1 class="name">Sumesh <em class="edit">Khadgi </em></h1>
+    <h1 class="name">Sumesh <em>Khadgi </em></h1>
     <p class="tagline">I build financial systems and controls for international nonprofits — grant accounting, multi-country consolidation, and the quiet infrastructure that lets mission-driven organizations run well.</p>
     <div class="hero-links">
       <a href="#experience">Experience</a>
       <a href="#contact">Get in touch</a>
-      <a class="edit" href="#">www.linkedin.com/in/sumesh-khadgi</a>
+      <a href="https://www.linkedin.com/in/sumesh-khadgi/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </header>
 </div>
 
-<svg class="ridge" viewBox="0 0 760 64" preserveAspectRatio="none" aria-hidden="true">
-  <path d="M0,50 L90,18 L150,40 L230,10 L310,44 L400,22 L480,48 L560,14 L650,38 L760,20" />
-</svg>
+<div class="divider" aria-hidden="true">
+  <div class="divider-lines"></div>
+</div>
 
 <div class="wrap">
   <section id="about">
     <h2 class="section-title">About</h2>
     <div class="about-body">
-      <p class="edit"> Based in Kathmandu, Nepal, I work in international NGO finance, with a focus on fund accounting, SORP compliance, and grant lifecycle management across multi-country education programmes. I'm currently leading a Microsoft Dynamics 365 Business Central implementation, moving a multi-entity organization off Xero onto a system built for consolidated reporting, restricted-fund tracking, and intercompany operations across program countries.</p>
+      <p> Based in Kathmandu, Nepal, I work in international NGO finance, with a focus on fund accounting, SORP compliance, and grant lifecycle management across multi-country education programmes. I'm currently leading a Microsoft Dynamics 365 Business Central implementation, moving a multi-entity organization off Xero onto a system built for consolidated reporting, restricted-fund tracking, and intercompany operations across program countries.</p>
       <p>Outside my primary role, I serve as Treasurer for a youth-led nonprofit, where governance, audit readiness, and financial transparency matter just as much as the numbers themselves.</p>
     </div>
   </section>
@@ -252,7 +253,7 @@
     <h2 class="section-title">Experience</h2>
     <div class="timeline">
       <div class="role">
-        <div class="role-period edit">August 2024–Present</div>
+        <div class="role-period">August 2024–Present</div>
         <div>
           <p class="role-title">Senior Global Finance Officer</p>
           <p class="role-org">United World Schools</p>
@@ -260,13 +261,11 @@
         </div>
       </div>
       <div class="role">
-        <div class="role-period edit">September 2024–Present</div>
+        <div class="role-period">September 2024–Present</div>
         <div>
           <p class="role-title">Treasurer</p>
           <p class="role-org">YUWA</p>
           <p class="role-desc">Overseeing financial governance and statutory audit processes for a youth-led nonprofit based in Nepal.</p>
-        </div>
-      </div>
         </div>
       </div>
     </div>
@@ -277,8 +276,8 @@
     <div class="contact-card">
       <p>Open to conversations on nonprofit finance systems, ERP implementations, and international NGO operations.</p>
       <ul class="contact-list">
-        <li><span class="label">Email</span> <a class="edit" href="mailto:sumeshkhadgi@gmail.com">sumeshkhadgi@gmail.com</a></li>
-        <li><span class="label">LinkedIn</span> <a class="edit" href="#">linkedin.com/in/sumesh-khadgi/</a></li>
+        <li><span class="label">Email</span> <a href="mailto:sumeshkhadgi@gmail.com">sumeshkhadgi@gmail.com</a></li>
+        <li><span class="label">LinkedIn</span> <a href="https://www.linkedin.com/in/sumesh-khadgi/" target="_blank" rel="noopener">linkedin.com/in/sumesh-khadgi</a></li>
         <li><span class="label">Location</span> Kathmandu, Nepal</li>
       </ul>
     </div>
