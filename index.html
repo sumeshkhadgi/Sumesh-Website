@@ -3,293 +3,711 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sumesh — Finance & Nonprofit Systems</title>
-<meta name="description" content="Portfolio of Sumesh, finance professional working across international education and nonprofit organizations, based in Kathmandu, Nepal.">
+<title>Sumesh Khadgi — Non-Profit Finance & Financial Systems</title>
+<meta name="description" content="Sumesh Khadgi — non-profit finance professional specialising in multi-country fund accounting, grant compliance, and financial systems implementation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg: #172621;
-    --card: #1E332C;
-    --ink: #EFEAE0;
-    --ink-soft: #A9B8AE;
-    --gold: #C79A44;
-    --sage: #06402B;
-    --sage-text: #6FA688;
-    --line: #2A3E36;
-    --max: 760px;
+    --bg: #0E2019;
+    --panel: #15291F;
+    --panel-2: #112319;
+    --rule: #2C4A3B;
+    --rule-soft: #1F3A2C;
+    --paper: #F3EFE3;
+    --ink-soft: #AFC3B4;
+    --ink-faint: #7E9689;
+    --gold: #C6A15B;
+    --gold-bright: #E0C081;
+    --max: 860px;
+    --pad: 28px;
   }
 
   *{ box-sizing: border-box; }
-
   html{ scroll-behavior: smooth; }
 
   body{
     margin:0;
     background: var(--bg);
-    color: var(--ink);
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 400;
+    background-image:
+      radial-gradient(1200px 500px at 15% -10%, rgba(198,161,91,0.06), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, rgba(198,161,91,0.04), transparent 55%);
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
-  a{ color: var(--gold); text-decoration: none; }
-  a:hover{ text-decoration: underline; }
-  a:focus-visible, button:focus-visible{ outline: 2px solid var(--gold); outline-offset: 3px; }
+  a{ color: inherit; }
+
+  ::selection{ background: var(--gold); color: #0E2019; }
+
+  .mono{ font-family: 'IBM Plex Mono', monospace; }
 
   .wrap{
     max-width: var(--max);
     margin: 0 auto;
-    padding: 0 28px;
+    padding: 0 var(--pad);
   }
 
-  /* ---------- Divider accent ---------- */
-  .divider{
+  /* ---------- NAV ---------- */
+  header.nav{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(14,32,25,0.86);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .nav-inner{
     max-width: var(--max);
     margin: 0 auto;
-    padding: 0 28px;
+    padding: 16px var(--pad);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  .divider-lines{
-    height: 12px;
-    border-top: 2px solid var(--gold);
-    border-bottom: 1px solid var(--gold);
-    opacity: 0.6;
+  .nav-mark{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: var(--paper);
+  }
+  .nav-mark span{ color: var(--gold); }
+  nav.links{
+    display: flex;
+    gap: 26px;
+    list-style: none;
+    margin: 0; padding: 0;
+  }
+  nav.links a{
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    position: relative;
+    padding-bottom: 3px;
+    transition: color .2s ease;
+  }
+  nav.links a:hover{ color: var(--gold-bright); }
+  .nav-toggle{ display:none; background:none; border:none; color: var(--paper); font-size: 22px; cursor:pointer; }
+
+  @media (max-width: 680px){
+    nav.links{
+      position: absolute;
+      top: 58px; left: 0; right: 0;
+      flex-direction: column;
+      background: var(--panel-2);
+      border-bottom: 1px solid var(--rule-soft);
+      padding: 18px var(--pad) 22px;
+      gap: 16px;
+      display: none;
+    }
+    nav.links.open{ display: flex; }
+    .nav-toggle{ display: block; }
   }
 
-  /* ---------- Hero ---------- */
-  header.hero{
-    padding: 96px 0 48px;
+  /* ---------- HERO ---------- */
+  .hero{
+    padding: 96px 0 70px;
     position: relative;
   }
   .eyebrow{
-    font-family: 'Work Sans', sans-serif;
-    font-size: 13px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--sage-text);
-    font-weight: 600;
-    margin: 0 0 18px;
-  }
-  h1.name{
-    font-family: 'Fraunces', serif;
-    font-optical-sizing: auto;
-    font-size: clamp(42px, 8vw, 68px);
-    font-weight: 500;
-    line-height: 1.05;
-    margin: 0 0 20px;
-    color: var(--ink);
-  }
-  h1.name em{
-    font-style: italic;
-    font-weight: 400;
     color: var(--gold);
-  }
-  p.tagline{
-    font-size: 19px;
-    color: var(--ink-soft);
-    max-width: 46ch;
-    margin: 0 0 32px;
-  }
-  .hero-links{
-    display:flex;
-    gap: 18px;
-    flex-wrap: wrap;
-    font-size: 15px;
-    font-weight: 500;
-  }
-  .hero-links a{
-    color: var(--ink);
-    border-bottom: 1.5px solid var(--gold);
-    padding-bottom: 2px;
-  }
-
-  /* ---------- Sections ---------- */
-  section{ padding: 56px 0; }
-  section + section{ border-top: 1px solid var(--line); }
-
-  h2.section-title{
-    font-family: 'Fraunces', serif;
-    font-size: 28px;
-    font-weight: 500;
-    margin: 0 0 28px;
-    color: var(--ink);
-  }
-
-  .about-body p{
-    font-size: 17px;
-    color: var(--ink-soft);
-    max-width: 62ch;
-    margin: 0 0 16px;
-  }
-
-  /* ---------- Experience timeline ---------- */
-  .timeline{
     display: flex;
-    flex-direction: column;
-    gap: 0;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+  .eyebrow::before{
+    content: "";
+    width: 26px; height: 1px;
+    background: var(--gold);
+    display: inline-block;
+  }
+  .hero h1{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(40px, 7vw, 64px);
+    line-height: 1.04;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+  }
+  .hero h1 em{
+    font-style: italic;
+    font-weight: 500;
+    color: var(--gold-bright);
+  }
+  .hero p.lede{
+    max-width: 620px;
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin: 0 0 34px;
+  }
+  .hero-meta{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+  .hero-meta a{ color: var(--ink-soft); text-decoration: none; border-bottom: 1px dotted var(--rule); }
+  .hero-meta a:hover{ color: var(--gold-bright); border-color: var(--gold-bright); }
+
+  .seal{
+    position: absolute;
+    right: var(--pad);
+    top: 90px;
+    width: 118px; height: 118px;
+    opacity: 0.92;
+  }
+  @media (max-width: 780px){ .seal{ display:none; } }
+
+  /* ---------- SECTION FRAME (ledger header) ---------- */
+  section{ padding: 62px 0; }
+  section + section{ border-top: 1px solid var(--rule-soft); }
+
+  .ledger-head{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-top: 1.5px solid var(--gold);
+    border-bottom: 1px solid var(--rule);
+    padding: 10px 0;
+    margin-bottom: 34px;
+  }
+  .ledger-head h2{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 0.01em;
+    margin: 0;
+  }
+  .ledger-head .tag{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .lede-block p{ color: var(--ink-soft); max-width: 680px; }
+
+  /* ---------- EXPERIENCE ---------- */
+  .org{
+    margin-bottom: 40px;
+  }
+  .org:last-child{ margin-bottom: 0; }
+  .org-name{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
   }
   .role{
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    gap: 24px;
-    padding: 26px 0;
-    border-top: 1px solid var(--line);
+    padding: 16px 0;
+    border-bottom: 1px dashed var(--rule);
   }
-  .role:first-child{ border-top: none; padding-top: 0; }
-  .role-period{
-    font-size: 13px;
-    letter-spacing: 0.04em;
-    color: var(--sage-text);
-    font-weight: 600;
-    padding-top: 3px;
+  .role:last-child{ border-bottom: none; }
+  .role-row{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
   }
   .role-title{
     font-family: 'Fraunces', serif;
-    font-size: 20px;
-    font-weight: 500;
-    margin: 0 0 4px;
-    color: var(--ink);
-  }
-  .role-org{
-    font-size: 14px;
-    color: var(--gold);
     font-weight: 600;
-    margin: 0 0 10px;
+    font-size: 19px;
+    color: var(--paper);
   }
-  .role-desc{
-    font-size: 15.5px;
+  .leader{
+    flex: 1;
+    border-bottom: 1px dotted var(--ink-faint);
+    min-width: 24px;
+    margin-bottom: 6px;
+    opacity: .6;
+  }
+  .role-date{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
     color: var(--ink-soft);
-    margin: 0;
-    max-width: 56ch;
+    white-space: nowrap;
+  }
+  .role-tag{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--gold);
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-left: 4px;
+  }
+  ul.bullets{
+    margin: 12px 0 0;
+    padding: 0 0 0 18px;
+    color: var(--ink-soft);
+  }
+  ul.bullets li{
+    margin-bottom: 8px;
+    padding-left: 4px;
+  }
+  ul.bullets li::marker{ color: var(--gold); }
+
+  .note{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    font-style: italic;
+    color: var(--ink-faint);
+    margin: 0 0 18px;
   }
 
-  /* ---------- Contact ---------- */
-  .contact-card{
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-top: 3px solid var(--sage);
-    border-radius: 4px;
-    padding: 36px;
-  }
-  .contact-card p{
-    font-size: 16px;
-    color: var(--ink-soft);
-    margin: 0 0 20px;
-    max-width: 50ch;
-  }
-  .contact-list{
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  /* ---------- SKILLS ---------- */
+  .skill-grid{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 10px;
   }
-  .contact-list a{
-    font-size: 16px;
-    font-weight: 500;
-    color: var(--ink);
+  .chip{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--paper);
+    border: 1px solid var(--rule);
+    background: var(--panel);
+    padding: 7px 12px;
+    border-radius: 3px;
+    transition: border-color .2s ease, color .2s ease;
   }
-  .contact-list span.label{
-    display:inline-block;
-    width: 90px;
-    color: var(--sage-text);
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    font-weight: 600;
+  .chip:hover{ border-color: var(--gold); color: var(--gold-bright); }
+
+  /* ---------- TWO COL LISTS ---------- */
+  .two-col{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 40px;
+  }
+  @media (max-width: 640px){ .two-col{ grid-template-columns: 1fr; } }
+  .line-item{
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px dashed var(--rule-soft);
+    font-size: 14.5px;
+  }
+  .line-item .what{ color: var(--paper); }
+  .line-item .when{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    white-space: nowrap;
   }
 
+  /* ---------- EDUCATION ---------- */
+  .edu-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .edu-item:last-child{ border-bottom: none; }
+  .edu-degree{ font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; }
+  .edu-school{ color: var(--ink-soft); font-size: 14px; margin-top: 3px; }
+  .edu-score{ color: var(--gold); font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; }
+  .edu-year{ font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--ink-faint); white-space: nowrap; }
+
+  /* ---------- FOOTER ---------- */
   footer{
-    padding: 32px 0 64px;
+    padding: 60px 0 50px;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .footer-grid{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  footer h3{
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 600;
+    margin: 0 0 14px;
+  }
+  footer p{ color: var(--ink-soft); max-width: 420px; margin: 0 0 20px; }
+  .footer-links{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 13px;
-    color: var(--ink-soft);
-    opacity: 0.7;
+  }
+  .footer-links a{
+    text-decoration: none;
+    color: var(--paper);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+  }
+  .footer-links a:hover{ color: var(--gold-bright); }
+  .copyright{
+    margin-top: 44px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ink-faint);
   }
 
-  /* ---------- Mobile ---------- */
-  @media (max-width: 560px){
-    header.hero{ padding: 64px 0 36px; }
-    .role{ grid-template-columns: 1fr; gap: 6px; }
-    .role-period{ padding-top: 0; }
+  /* ---------- REVEAL ---------- */
+  /* Content is visible by default (progressive enhancement).
+     Only when JS confirms it can run the reveal animation do we hide-then-show. */
+  .js-reveal-ready .reveal{
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .6s ease, transform .6s ease;
   }
+  .reveal.in{ opacity: 1; transform: translateY(0); }
 
   @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity: 1; transform: none; transition: none; }
     html{ scroll-behavior: auto; }
+  }
+
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--gold-bright);
+    outline-offset: 3px;
   }
 </style>
 </head>
 <body>
 
-<div class="wrap">
-  <header class="hero">
-    <p class="eyebrow">Finance &amp; Nonprofit Systems</p>
-    <h1 class="name">Sumesh <em>Khadgi </em></h1>
-    <p class="tagline">I build financial systems and controls for international nonprofits — grant accounting, multi-country consolidation, and the quiet infrastructure that lets mission-driven organizations run well.</p>
-    <div class="hero-links">
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-mark">Sumesh<span>.</span>Khadgi</a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('nav.links').classList.toggle('open')">☰</button>
+    <nav class="links">
+      <a href="#about">About</a>
       <a href="#experience">Experience</a>
-      <a href="#contact">Get in touch</a>
-      <a href="https://www.linkedin.com/in/sumesh-khadgi/" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-  </header>
-</div>
+      <a href="#skills">Skills</a>
+      <a href="#governance">Governance</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-<div class="divider" aria-hidden="true">
-  <div class="divider-lines"></div>
-</div>
+<main id="top">
 
-<div class="wrap">
-  <section id="about">
-    <h2 class="section-title">About</h2>
-    <div class="about-body">
-      <p> Based in Kathmandu, Nepal, I work in international NGO finance, with a focus on fund accounting, SORP compliance, and grant lifecycle management across multi-country education programmes. I'm currently leading a Microsoft Dynamics 365 Business Central implementation, moving a multi-entity organization off Xero onto a system built for consolidated reporting, restricted-fund tracking, and intercompany operations across program countries.</p>
-      <p>Outside my primary role, I serve as Treasurer for a youth-led nonprofit, where governance, audit readiness, and financial transparency matter just as much as the numbers themselves.</p>
-    </div>
-  </section>
+  <!-- HERO -->
+  <section class="hero wrap">
+    <svg class="seal" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="60" cy="60" r="56" stroke="#C6A15B" stroke-width="1.2"/>
+      <circle cx="60" cy="60" r="47" stroke="#C6A15B" stroke-width="1"/>
+      <path id="sealArc" d="M60,13 A47,47 0 1 1 59.9,13" fill="none"/>
+      <text font-family="IBM Plex Mono" font-size="8.4" letter-spacing="3" fill="#C6A15B">
+        <textPath href="#sealArc" startOffset="2%">FUND ACCOUNTING · AUDIT READY · KATHMANDU ·</textPath>
+      </text>
+      <text x="60" y="68" text-anchor="middle" font-family="Fraunces" font-weight="600" font-size="30" fill="#F3EFE3">SK</text>
+    </svg>
 
-  <section id="experience">
-    <h2 class="section-title">Experience</h2>
-    <div class="timeline">
-      <div class="role">
-        <div class="role-period">August 2024–Present</div>
-        <div>
-          <p class="role-title">Senior Global Finance Officer</p>
-          <p class="role-org">United World Schools</p>
-          <p class="role-desc">Leading finance operations across program countries including Nepal, Madagascar, Myanmar, and Cambodia — spanning consolidation, forex, grant accounting, audit response, and an active ERP migration to Dynamics 365 Business Central.</p>
-        </div>
-      </div>
-      <div class="role">
-        <div class="role-period">September 2024–Present</div>
-        <div>
-          <p class="role-title">Treasurer</p>
-          <p class="role-org">YUWA</p>
-          <p class="role-desc">Overseeing financial governance and statutory audit processes for a youth-led nonprofit based in Nepal.</p>
-        </div>
-      </div>
+    <p class="eyebrow reveal">Non-Profit Finance &amp; Financial Systems</p>
+    <h1 class="reveal">Sumesh Khadgi</h1>
+    <p class="lede reveal">
+      Balancing the books for organisations doing work that matters — multi-country fund
+      accounting, grant compliance, and the financial systems that hold it all together.
+    </p>
+    <div class="hero-meta reveal">
+      <span>Kathmandu, Nepal</span>
+      <a href="mailto:sumeshkhadgi@gmail.com">sumeshkhadgi@gmail.com</a>
+      <a href="https://www.linkedin.com/in/sumesh-khadgi/" target="_blank" rel="noopener">linkedin.com/in/sumesh-khadgi</a>
+      <a href="tel:+9779803530016">+977 9803530016</a>
     </div>
   </section>
 
-  <section id="contact">
-    <h2 class="section-title">Get in touch</h2>
-    <div class="contact-card">
-      <p>Open to conversations on nonprofit finance systems, ERP implementations, and international NGO operations.</p>
-      <ul class="contact-list">
-        <li><span class="label">Email</span> <a href="mailto:sumeshkhadgi@gmail.com">sumeshkhadgi@gmail.com</a></li>
-        <li><span class="label">LinkedIn</span> <a href="https://www.linkedin.com/in/sumesh-khadgi/" target="_blank" rel="noopener">linkedin.com/in/sumesh-khadgi</a></li>
-        <li><span class="label">Location</span> Kathmandu, Nepal</li>
+  <!-- ABOUT -->
+  <section id="about" class="wrap">
+    <div class="ledger-head reveal">
+      <h2>About</h2>
+      <span class="tag">Summary</span>
+    </div>
+    <div class="lede-block reveal">
+      <p>
+        Non-profit finance professional with 5+ years' experience spanning multi-country fund
+        accounting, grant compliance, and financial systems implementation. Currently leading
+        the architectural design of a Microsoft Dynamics 365 Business Central rollout across a
+        four-country charity operation — building multi-entity consolidation, SORP-compliant
+        classification, and donor reporting frameworks from the ground up.
+      </p>
+      <p>
+        Combines hands-on FCDO grant management and audit readiness with governance experience
+        as Treasurer of a national youth-led NGO, overseeing a NPR 10 crore annual budget. XERO
+        Level 2 Certified, with a track record of reducing coding error rates and strengthening
+        financial controls across cross-border finance teams.
+      </p>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="wrap">
+    <div class="ledger-head reveal">
+      <h2>Experience</h2>
+      <span class="tag">Professional Record</span>
+    </div>
+
+    <div class="org reveal">
+      <div class="org-name">United World Schools (UWS) — Kathmandu, Nepal · Hybrid, supporting UK / Nepal / Cambodia / Myanmar / Madagascar</div>
+
+      <div class="role">
+        <div class="role-row">
+          <span class="role-title">Senior Global Finance Officer</span>
+          <span class="leader"></span>
+          <span class="role-date">Jan 2026 — Present</span>
+        </div>
+        <ul class="bullets">
+          <li>Leading architectural design of a Microsoft Dynamics 365 Business Central implementation — a seven-dimension accounting model, multi-entity company structure, intercompany accounts, and SORP CA/FR/GV classification logic — in coordination with senior leadership.</li>
+          <li>Own the monthly close cycle: receive, review, and reconcile cashbook reports from four country finance teams, and upload invoices, bills, and consolidated entries into XERO.</li>
+          <li>Prepare and monitor FCDO financial reports, claims, and budgets against donor timelines; run cost-centre analysis across schools and locations and regular budget variance analyses.</li>
+          <li>Reduced incorrect account-coding error rates from 20% to 5% across 4,000+ monthly transaction lines through structured coaching and a Capacity Development Plan spanning four countries.</li>
+          <li>Deliver 100% of required external audit documentation on time with zero material findings, including direct liaison with auditors on grant, expense, and Gift Aid matters.</li>
+          <li>Present financial and operational insights through dashboards, KPI cards, and a structured multi-country audit findings tracker.</li>
+          <li>Pilot AI-assisted tools for data validation, variance analysis, and reporting support under appropriate human review and governance controls.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-row">
+          <span class="role-title">Global Finance Officer</span>
+          <span class="leader"></span>
+          <span class="role-date">Aug 2024 — Dec 2025</span>
+        </div>
+        <ul class="bullets">
+          <li>Supported HubSpot–XERO integration to improve donor traceability and automated Gift Aid form processing.</li>
+          <li>Supported fundraising bids and proposals — including EAC and BBC Radio 4 Appeal — through budget verification, MoU drafting, and cash flow projections.</li>
+          <li>Prepared monthly income reports and reconciliation statements, including weekly reconciliation reviews with the fundraising team.</li>
+          <li>Delivered ongoing capacity development to finance teams across Nepal, Cambodia, Madagascar, and Myanmar through one-to-one coaching and structured report reviews.</li>
+          <li>Led preparatory groundwork — setup, documentation, training, demo environments — for a unified accounting system rollout across country programmes.</li>
+          <li>Served as key liaison to external auditors via the Inflo platform across annual, internal, and donor-specific audits.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="org reveal">
+      <div class="org-name">YUWA — Kathmandu, Nepal · On-site</div>
+
+      <div class="role">
+        <div class="role-row">
+          <span class="role-title">Finance and Admin Officer</span>
+          <span class="leader"></span>
+          <span class="role-date">Sep 2022 — Jun 2024</span>
+        </div>
+        <ul class="bullets">
+          <li>Conducted internal audits and monitored cash flow, preparing monthly financial reports with activity-level budget tracking.</li>
+          <li>Prepared monthly payroll and grant financial reports for institutional donors, and performed monthly cash and bank reconciliations.</li>
+          <li>Ensured compliance with TDS payment, E-TDS filing, and tax return filing under the Income Tax Act of Nepal.</li>
+          <li>Analysed budget vs. actual expenditure across program grants, identifying and resolving variances.</li>
+          <li>Oversaw HR administration for program staff and managed logistics, procurement, and quarterly asset verification.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-row">
+          <span class="role-title">Finance and Admin Assistant</span>
+          <span class="leader"></span>
+          <span class="role-date">Aug 2021 — Aug 2022</span>
+        </div>
+        <ul class="bullets">
+          <li>Entered and maintained financial data in accounting software, managing accounts payable and receivable.</li>
+          <li>Assisted in preparing documentation for audits and compliance reviews.</li>
+          <li>Compiled financial data and prepared reports, coordinating across departments.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="org reveal">
+      <div class="org-name">JBRH Associates — Anamnagar, Kathmandu, Nepal</div>
+      <div class="role">
+        <div class="role-row">
+          <span class="role-title">Articleship Trainee</span>
+          <span class="leader"></span>
+          <span class="role-date">Jun 2020 — Aug 2020</span>
+        </div>
+        <ul class="bullets">
+          <li>Collaborated with senior article trainees to conduct audits and managed E-TDS processes for clients.</li>
+          <li>Executed data entries in accounting systems and prepared bank reconciliation statements for clients.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="wrap">
+    <div class="ledger-head reveal">
+      <h2>Core Skills</h2>
+      <span class="tag">Toolkit</span>
+    </div>
+    <div class="skill-grid reveal">
+      <span class="chip">Fund Accounting &amp; SORP Compliance</span>
+      <span class="chip">Multi-Entity Consolidation</span>
+      <span class="chip">Grant Lifecycle Management (FCDO)</span>
+      <span class="chip">Microsoft Dynamics 365 Business Central</span>
+      <span class="chip">XERO — Level 2 Certified</span>
+      <span class="chip">Accounting Systems Integration</span>
+      <span class="chip">Internal Controls &amp; Audit Readiness</span>
+      <span class="chip">Budget &amp; Variance Analysis</span>
+      <span class="chip">Donor Compliance &amp; Reporting</span>
+      <span class="chip">Cross-Country Team Capacity Building</span>
+      <span class="chip">Financial Data Visualization</span>
+      <span class="chip">AI-Assisted Financial Workflows</span>
+      <span class="chip">Advanced Excel</span>
+    </div>
+  </section>
+
+  <!-- GOVERNANCE -->
+  <section id="governance" class="wrap">
+    <div class="ledger-head reveal">
+      <h2>Board &amp; Governance</h2>
+      <span class="tag">Concurrent · Volunteer</span>
+    </div>
+    <p class="note reveal">Held alongside UWS employment, in a volunteer governance capacity following prior staff tenure at YUWA.</p>
+    <div class="org reveal">
+      <div class="org-name">YUWA — Kathmandu, Nepal</div>
+      <div class="role">
+        <div class="role-row">
+          <span class="role-title">Treasurer</span>
+          <span class="leader"></span>
+          <span class="role-date">Sep 2024 — Sep 2026</span>
+        </div>
+        <ul class="bullets">
+          <li>Hold mandatory signatory authority for all banking transactions and approve annual and project-specific budgets alongside two co-signatories — overseeing an annual budget of approximately NPR 10 crores.</li>
+          <li>Lead capacity development and mentoring for the finance department, reducing staff turnover and stabilising operations through leadership transitions and project closures.</li>
+          <li>Present financial reports to the Board regularly to support data-driven governance, and ensure the statutory audit is conducted annually — presenting results to General Members at the AGM.</li>
+          <li>Serve as primary liaison with donors on key financial matters and mentor incoming Executive Board members for handover.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="lede-block reveal" style="margin-top: 30px;">
+      <div class="org-name">Leadership &amp; Volunteer, YUWA</div>
+      <ul class="bullets">
+        <li>Facilitated financial literacy sessions for young people, and helped develop YUWA's organisational financial strategic plan and priorities.</li>
+        <li>Represented YUWA in trainings, seminars, consultations, and conferences to strengthen organisational position and reach.</li>
+        <li>Received mentorship in organisational development, financial and procurement practice, and inclusive youth participation from thematic leads at YUWA and UWS.</li>
       </ul>
     </div>
   </section>
 
-  <footer>
-    &copy; <span id="year"></span> Sumesh. Built and hosted with curiosity.
+  <!-- EDUCATION -->
+  <section id="education" class="wrap">
+    <div class="ledger-head reveal">
+      <h2>Education</h2>
+      <span class="tag">Academic Record</span>
+    </div>
+    <div class="reveal">
+      <div class="edu-item">
+        <div>
+          <div class="edu-degree">Master of Business Administration (MBA)</div>
+          <div class="edu-school">Lincoln International College of Management and IT (Lincoln University) · <span class="edu-score">GPA 3.81</span></div>
+        </div>
+        <div class="edu-year">2026</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-degree">Bachelor of Business Studies (BBS)</div>
+          <div class="edu-school">Divya Gyan College, Tribhuvan University · <span class="edu-score">53.5%</span></div>
+        </div>
+        <div class="edu-year">2017 — 2021</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-degree">+2 Higher Secondary, NEB Board</div>
+          <div class="edu-school">Bhanubhakta Memorial College · <span class="edu-score">69%</span></div>
+        </div>
+        <div class="edu-year">2017 — 2018</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-degree">SLC, Government of Nepal Board</div>
+          <div class="edu-school">Amardeep Secondary School · <span class="edu-score">83.25%</span></div>
+        </div>
+        <div class="edu-year">2014 — 2015</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="wrap">
+    <div class="ledger-head reveal">
+      <h2>Certifications &amp; Trainings</h2>
+      <span class="tag">Most Recent First</span>
+    </div>
+    <div class="two-col reveal">
+      <div class="line-item"><span class="what">L2 XERO Certified Professional</span><span class="when">Dec 2025</span></div>
+      <div class="line-item"><span class="what">L1 XERO Certified Professional</span><span class="when">Nov 2025</span></div>
+      <div class="line-item"><span class="what">Program Management Workshop, YUWA</span><span class="when">Jun 2025</span></div>
+      <div class="line-item"><span class="what">Proposal Writing Workshop, IIMS College</span><span class="when">May 2025</span></div>
+      <div class="line-item"><span class="what">Data Visualization Workshop, IIMS College</span><span class="when">Apr 2025</span></div>
+      <div class="line-item"><span class="what">Strategic Planning Workshop, YUWA</span><span class="when">Dec 2024</span></div>
+      <div class="line-item"><span class="what">Advance Procurement Training, YUWA</span><span class="when">May 2024</span></div>
+      <div class="line-item"><span class="what">MS PowerPoint Workshop, Intl. IDEA</span><span class="when">Apr 2024</span></div>
+      <div class="line-item"><span class="what">Advance Excel Training (12 hrs)</span><span class="when">Nov 2023</span></div>
+      <div class="line-item"><span class="what">Intersectionality Workshop, ARROW</span><span class="when">May 2023</span></div>
+      <div class="line-item"><span class="what">Advocacy Spaces Training, RHRN</span><span class="when">Nov 2022</span></div>
+      <div class="line-item"><span class="what">Finance &amp; Grant Mgmt., Plan Intl. Nepal</span><span class="when">Oct 2022</span></div>
+      <div class="line-item"><span class="what">MS Office &amp; Tally ERP (60 hrs)</span><span class="when">Aug 2019</span></div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer id="contact" class="wrap">
+    <div class="footer-grid reveal">
+      <div>
+        <h3>Let's talk numbers.</h3>
+        <p>Open to conversations on non-profit finance systems, multi-country fund accounting, and governance. Based in Kathmandu, working across time zones.</p>
+        <div class="footer-links">
+          <a href="mailto:sumeshkhadgi@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/sumesh-khadgi/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="tel:+9779803530016">Call</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">© <span id="year"></span> Sumesh Khadgi · Kathmandu, Nepal</div>
   </footer>
-</div>
+
+</main>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Close mobile nav on link click
+  document.querySelectorAll('nav.links a').forEach(a=>{
+    a.addEventListener('click', ()=> document.querySelector('nav.links').classList.remove('open'));
+  });
+
+  // Scroll reveal (progressive enhancement — content is visible by default;
+  // only hidden-then-faded-in once we know JS + IntersectionObserver work)
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('js-reveal-ready');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+  }
 </script>
 
 </body>
